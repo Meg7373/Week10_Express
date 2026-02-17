@@ -3,12 +3,14 @@ import cors from 'cors'
 import db from './dbConnections.js'
 import studentRouter from './Routers/studentsRouter.js'
 import coursesRouter from './Routers/coursesRouter.js'
+import usersRouter from './Routers/usersRouter.js'
 
 const server = express();
 server.use(cors())
 
 server.use ("/students", studentRouter)
 server.use ("/courses", coursesRouter)
+server.use ("/login", usersRouter)
 
 server.get ("/", (req, res)=> {
     res.send("The server is running")
